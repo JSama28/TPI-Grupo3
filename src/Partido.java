@@ -1,15 +1,15 @@
 public class Partido {
-    private int equipo1;
-    private int equipo2;
+    private Equipo equipo1;
+    private Equipo equipo2;
 
     private int golesEquipo1;
-    private int getGolesEquipo2;
+    private int golesEquipo2;
 
     public Equipo getEquipo1() {
         return equipo1;
     }
 
-    public void setEquipo1(int equipo1) {
+    public void setEquipo1(Equipo equipo1) {
         this.equipo1 = equipo1;
     }
 
@@ -17,7 +17,7 @@ public class Partido {
         return equipo2;
     }
 
-    public void setEquipo2(int equipo2) {
+    public void setEquipo2(Equipo equipo2) {
         this.equipo2 = equipo2;
     }
 
@@ -29,23 +29,35 @@ public class Partido {
         this.golesEquipo1 = golesEquipo1;
     }
 
-    public int getGetGolesEquipo2() {
-        return getGolesEquipo2;
+    public int getGolesEquipo2() {
+        return golesEquipo2;
     }
 
-    public void setGetGolesEquipo2(int getGolesEquipo2) {
-        this.getGolesEquipo2 = getGolesEquipo2;
+    public void setGolesEquipo2(int golesEquipo2) {
+        this.golesEquipo2 = golesEquipo2;
     }
 
     public int equipoGanador(Equipo equipo1, Equipo equipo2){
-        if (golesEquipo1 > getGolesEquipo2){
+        if (golesEquipo1 > golesEquipo2){
             return 1;
-        } else if (getGolesEquipo2 > golesEquipo1) {
+        } else if (golesEquipo2 > golesEquipo1) {
             return 2;
         } else {
             return 0;
         }
     }
 
+    public ResultadoEnum resultado(Equipo equipo) {
+        boolean esEquipo1 = equipo1.getNombre().equals(equipo.getNombre());
 
+        if (golesEquipo1 == golesEquipo2) {
+            return ResultadoEnum.empate;
+
+        } else if(golesEquipo1 > golesEquipo2 && esEquipo1) {
+            return ResultadoEnum.ganador;
+
+        } else {
+            return ResultadoEnum.perdedor;
+        }
+    }
 }
