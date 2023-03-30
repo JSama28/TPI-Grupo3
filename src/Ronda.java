@@ -6,17 +6,13 @@ import java.util.ArrayList;
 
 public class Ronda {
     private String numeroDeRonda;
-    private Partido[] partidos;
 
-    ArrayList<Pronostico> txtAPronostico(String rutaPronostico) throws IOException {
-        ArrayList<Pronostico> resultado = null;
-        for (String linea : Files.readAllLines(Paths.get(rutaPronostico))){
-            String[] splitted = linea.split(" ");
-            Partido partido =
-            Pronostico pronostico = new Pronostico();
-        }
-        return resultado;
+    public Ronda(String numeroDeRonda, Partido[] partidos) {
+        this.numeroDeRonda = numeroDeRonda;
+        this.partidos = partidos;
     }
+
+    private Partido[] partidos;
 
     public int puntos(Pronostico[] pronosticos){
         int puntosSumados = 0;

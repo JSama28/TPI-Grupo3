@@ -6,6 +6,10 @@ public class Equipo {
         return nombre;
     }
 
+    public Equipo(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
