@@ -1,2 +1,3 @@
-Argentina 1 2 Arabia Saudita
+Argentina 1 2 Arabia
 Polonia 0 0 México
+España 1 2 Italia

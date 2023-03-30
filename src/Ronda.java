@@ -4,12 +4,28 @@ public class Ronda {
     private String numeroDeRonda;
     private Partido[] partidos;
 
-    public ArrayList<Integer> equiposGanadores(){
-        ArrayList<Integer> resultado = new ArrayList<Integer>();
-        for (Partido partido : partidos){
-            int equipoGanador = partido.equipoGanador(partido.getEquipo1(), partido.getEquipo2());
-            resultado.add(equipoGanador);
+
+
+    public int puntos(Pronostico[] pronosticos){
+        int puntosSumados = 0;
+
+        for(Pronostico pronostico : pronosticos) {
+            Partido partidoPronosticado;
+
+            for(Partido partido : partidos) {
+                Partido partidoPronostico = pronostico.getPartido();
+                boolean mismoEquipo1 = partido.getEquipo1().getNombre().equals(partidoPronostico.getEquipo1().getNombre());
+                boolean mismoEquipo2 = partido.getEquipo2().getNombre().equals(partidoPronostico.getEquipo2().getNombre());
+
+                if(mismoEquipo1 && mismoEquipo2) {
+                    partidoPronosticado = partido;
+
+                    if (partidoPronosticado.resultado(pronostico.getEquipo()).equals(pronostico.getResultado())) {
+                        puntosSumados++;
+                    }
+                }
+            }
         }
-        return resultado;
+        return puntosSumados
     }
 }

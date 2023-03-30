@@ -37,16 +37,8 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
-    public int equipoGanador(Equipo equipo1, Equipo equipo2){
-        if (golesEquipo1 > golesEquipo2){
-            return 1;
-        } else if (golesEquipo2 > golesEquipo1) {
-            return 2;
-        } else {
-            return 0;
-        }
-    }
 
+    
     public ResultadoEnum resultado(Equipo equipo) {
         boolean esEquipo1 = equipo1.getNombre().equals(equipo.getNombre());
 
