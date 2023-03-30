@@ -1,10 +1,22 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Ronda {
     private String numeroDeRonda;
     private Partido[] partidos;
 
-
+    ArrayList<Pronostico> txtAPronostico(String rutaPronostico) throws IOException {
+        ArrayList<Pronostico> resultado = null;
+        for (String linea : Files.readAllLines(Paths.get(rutaPronostico))){
+            String[] splitted = linea.split(" ");
+            Partido partido =
+            Pronostico pronostico = new Pronostico();
+        }
+        return resultado;
+    }
 
     public int puntos(Pronostico[] pronosticos){
         int puntosSumados = 0;
@@ -26,6 +38,6 @@ public class Ronda {
                 }
             }
         }
-        return puntosSumados
+        return puntosSumados;
     }
 }

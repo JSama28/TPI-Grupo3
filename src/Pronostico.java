@@ -15,6 +15,12 @@ public class Pronostico {
         return equipo;
     }
 
+    public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultado) {
+        this.partido = partido;
+        this.equipo = equipo;
+        this.resultado = resultado;
+    }
+
     public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
