@@ -1,0 +1,42 @@
+{
+    "recommendations": [
+        import java.util.Scanner;
+
+public class Clase4Ej1a {
+    public static void main(String[] args) {
+    Scanner teclado= new Scanner(System.in);
+    int num[]=new int[3];
+    int "i" : 0, "f":0, "aux": 0,
+    boolean "as"=true;
+        
+    System.out.println("ingrese el primer numero");
+    	num[i]= teclado.nextInt();
+        System.out.println("ingrese el segundo numero");
+    	num[f]= teclado.nextInt();
+        System.out.println("ingrese el tercer numero");
+        num[aux]= teclado.nextInt();
+        for(i=0;i<num.length;i++) {
+    }
+        System.out.println("si desea que se ordene de manera ascendente ingrese true.");
+        teclado.nextBoolean();
+        if(as==true) {
+    	for(i=0;i<num.length;i++) {
+    		for(f=0;f<num.length;f++) {
+    		if(num[i]<num[f]) {
+    			aux=num[i];
+    			num[i]=num[f];
+    			num[f]=aux;
+    		}
+    		}
+    	}
+    			for(i=0;i<num.length;i++) {
+    				System.out.println("num["+(i+1)+"]=");
+    				System.out.println(num[i]);
+    			}
+    			
+    		}
+    		}
+    	
+    }
+    ]
+}
