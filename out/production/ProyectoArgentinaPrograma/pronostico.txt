@@ -1,4 +1,3 @@
-Partido1
-Argentina
-Partido2
-Mexico
+Argentina Arabia Argentina Ganador
+Mexico Polonia Polonia Perdedor
+Alemania Espana Alemania Empate

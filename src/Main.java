@@ -25,11 +25,11 @@ public class Main {
     static ArrayList<Pronostico> txtAPronostico(String rutaPronostico) throws IOException {
         ArrayList<Pronostico> pronosticos = new ArrayList<>();
 
-        for (String linea : Files.readAllLines(Paths.get(rutaPronostico))){
-            ArrayList<String> splitted = new ArrayList<>();
-            for (int i = 0; i < linea.length(); i++){
-                splitted.add(linea[i]);
-            }
+        for (String linea : Files.readAllLines(Paths.get(rutaPronostico))) {
+//            ArrayList<String> splitted = new ArrayList<>();
+//            for (int i = 0; i < linea.length(); i++){
+//                splitted.add(linea[i]);
+//            }
             String[] splitted = linea.split(" ");
             Equipo equipo1 = new Equipo(splitted[0]);
             Equipo equipo2 = new Equipo(splitted[1]);
@@ -39,9 +39,9 @@ public class Main {
             ResultadoEnum resultado;
             String resultadoLinea = splitted[3];
 
-            if(resultadoLinea.equals("Empate")) {
+            if (resultadoLinea.equals("Empate")) {
                 resultado = ResultadoEnum.empate;
-            } else if(resultadoLinea.equals("Ganador")) {
+            } else if (resultadoLinea.equals("Ganador")) {
                 resultado = ResultadoEnum.ganador;
             } else {
                 resultado = ResultadoEnum.perdedor;
