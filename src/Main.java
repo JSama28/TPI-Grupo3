@@ -1,10 +1,14 @@
+import javax.swing.*;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Main {
+
+    public Main() throws IOException {
+    }
 
     public static void main(String[] args) throws IOException {
         String rutaPronostico = "C:\\Users\\Celeste\\Desktop\\Argentina programa\\ProyectoArgentinaPrograma\\TPI-Grupo3\\src\\pronostico.txt";
@@ -13,8 +17,8 @@ public class Main {
         ArrayList<Pronostico> pronosticos = txtAPronostico(rutaPronostico);
         ArrayList<Partido> partidos = txtAPartidos(rutaResultado);
 
-        Ronda ronda = new Ronda("1", partidos.toArray());
-        int puntos = ronda.puntos(pronosticos.toArray());
+        Ronda ronda = new Ronda("1", partidos);
+        int puntos = ronda.puntos(pronosticos);
 
     }
 
@@ -22,6 +26,10 @@ public class Main {
         ArrayList<Pronostico> pronosticos = new ArrayList<>();
 
         for (String linea : Files.readAllLines(Paths.get(rutaPronostico))){
+            ArrayList<String> splitted = new ArrayList<>();
+            for (int i = 0; i < linea.length(); i++){
+                splitted.add(linea[i]);
+            }
             String[] splitted = linea.split(" ");
             Equipo equipo1 = new Equipo(splitted[0]);
             Equipo equipo2 = new Equipo(splitted[1]);
@@ -59,4 +67,6 @@ public class Main {
         }
         return partidos;
     }
+    Persona persona1 = new Persona("persona1", txtAPronostico("C:\\Users\\Celeste\\Desktop\\Argentina programa\\ProyectoArgentinaPrograma\\TPI-Grupo3\\src\\pronostico.txt"));
+    Persona persona2 = new Persona("persona2", txtAPronostico("C:\\Users\\Celeste\\Desktop\\Argentina programa\\ProyectoArgentinaPrograma\\TPI-Grupo3\\src\\pronostico.txt"));
 }
