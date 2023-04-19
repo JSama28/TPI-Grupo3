@@ -1,20 +1,22 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Ronda {
     private String numeroDeRonda;
-    private ArrayList<Partido> partidos;
 
-    private ArrayList<Persona> personas;
-
-
-    public Ronda(String numeroDeRonda, ArrayList<Partido> partidos) {
+    public Ronda(String numeroDeRonda, Partido[] partidos) {
         this.numeroDeRonda = numeroDeRonda;
         this.partidos = partidos;
     }
 
-    public int puntos(ArrayList<Pronostico> pronosticos){
+    private ArrayList <Partido> partidos;
+    private ArrayList <Persona> personas;
+
+
+    public int puntos(Pronostico[] pronosticos){
         int puntosSumados = 0;
 
         for(Pronostico pronostico : pronosticos) {
@@ -36,14 +38,5 @@ public class Ronda {
         }
         return puntosSumados;
     }
-
-    public Map<Persona, Integer> puntosPorPersona(ArrayList<Pronostico> pronosticos){
-        Map<Persona, Integer> resultado = new HashMap<>();
-        for (Persona persona: personas){
-            int puntosDeLaPersona = puntos(pronosticos);
-            resultado.put(persona, puntosDeLaPersona);
-            System.out.println(persona + " " + puntosDeLaPersona);
-        }
-        return resultado;
-    }
 }
+
